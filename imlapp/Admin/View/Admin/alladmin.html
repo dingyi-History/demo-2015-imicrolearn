@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>【i微学】一点一点轻松学</title>
+</head>
+<body>
+<table>
+	<th>管理员ID</th><th>用户名</th><th>密码</th><th>编辑</th>
+	<volist name="alladmin" id="vo">
+	<tr>
+	<td>{$vo.id}</td>
+	<td>{$vo.aname}</td>
+	<td>{$vo.apwd|md5}</td>
+	<td><a href="../admin/deloneadmin?id={$vo.id}">删除</a></td>
+	</tr>
+	</volist>
+
+</table>
+
+</body>
+</html>
+
