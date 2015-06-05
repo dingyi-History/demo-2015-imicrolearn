@@ -1,0 +1,16 @@
+#cleannav{
+	height: 70px;
+}
+
+#fangxiang li a{
+	height: 40px;
+	line-height: 40p;
+}
+
+#fangxiang li a:hover{
+	color: #93B846;
+}
+
+#kapian	li{
+	padding: 5px;
+}

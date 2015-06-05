@@ -12,6 +12,7 @@
 		<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/imicrolearn/Public/css/templatemo-style.css">
 		<link rel="stylesheet" href="/imicrolearn/Public/css/imicrolearn.css">
+		<link rel="shortcut icon" href="/imicrolearn/Public/favicon.ico">
 		<title>【i微学】一点一滴轻松学</title>
 	</head>
 	<body>
@@ -33,7 +34,6 @@
 						<li><a href="">基础引路</a></li>
 						<li><a href="#pricing">经验进阶</a></li>
 						<li><a href="#pricing" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">学习方向</a>
-
 						<ul id="fangxiang" class="dropdown-menu" role="menu">
    					 	<li><a href="#"  class="text-center">Android</a></li>
     					<li><a href="#"  class="text-center">PHP</a></li>
@@ -62,11 +62,11 @@
        
        <form action="../user/islogin" method="post"><div class="form-group">
     	<label for="name"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
-   		<input type="text" class="form-control" id="name" placeholder="用户名" name="name">
+   		<input type="text" class="form-control" id="name" placeholder="用户名" name="name" required>
   		</div>
   		<div class="form-group">
     	<label for="pwd"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
-    	<input type="password" class="form-control" id="pwd" placeholder="密码" name="pwd">
+    	<input type="password" class="form-control" id="pwd" placeholder="密码" name="pwd" required>
   		</div>
   		<div class="checkbox">
     	<label>
@@ -88,15 +88,34 @@
 		<div id ="cleannav"class="clearfix"></div>
 		
 		
-快来加入我们吧
-<form action="./isregister" method="post">
-	
-	用户名<input type="text" name="name"><br>
-	密码<input type="text" name="pwd1"><br>
-	再输一次密码<input type="text"name="pwd2"><br>
-	邮箱<input type="text" name="email"><br>
-	<input type="submit" value="注册">
-</form>
+<!-- start pricing -->
+		<section id="pricing">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow bounceIn">
+						<h2 class="text-uppercase">所有教程</h2>
+					</div>
+				<?php if(is_array($showallcourse)): $i = 0; $__LIST__ = $showallcourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="../course/showonecourse?id=<?php echo ($vo["id"]); ?>">
+					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
+						<div class="pricing text-uppercase">
+							<div class="pricing-title" style="padding:0px;max-width:300px;">
+								<img src="" alt="" style="width:100%;height:200px; max-width:300px;">
+							</div>
+							<ul>
+								<li style="padding:0px;"><h4><?php echo ($vo["cname"]); ?></h4></li>
+								<li><p><?php echo ($vo["ctitle"]); ?></p></li>
+							</ul>
+						</div>
+					</div>
+					</a><?php endforeach; endif; else: echo "" ;endif; ?>
+					
+
+				</div>
+			</div>
+		</section>
+		<!-- end pricing -->
+
+
 
 		
 		<div class="clearfix"></div>

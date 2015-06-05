@@ -22,7 +22,7 @@ class IndexController extends CommonController {
         }
         $msg1='欢迎归来，我的管理员。';
         $msg0= '对不起，你不是管理员';
-        $url = '../index/adminhome';
+        $url ='../index/adminhome';
         //调用基类方法，进行结果判断
         $this->issuccess($rs,$msg0,$msg1,$url);
 

@@ -1,0 +1,33 @@
+<extend name="./base"/>
+<block name="main">
+<!-- start pricing -->
+		<section id="pricing">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow bounceIn">
+						<h2 class="text-uppercase">所有教程</h2>
+					</div>
+				<volist name="showallcourse" id="vo">
+				<a href="../course/showonecourse?id={$vo.id}">
+					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
+						<div class="pricing text-uppercase">
+							<div class="pricing-title" style="padding:0px;max-width:300px;">
+								<img src="" alt="" style="width:100%;height:200px; max-width:300px;">
+							</div>
+							<ul>
+								<li style="padding:0px;"><h4>{$vo.cname}</h4></li>
+								<li><p>{$vo.ctitle}</p></li>
+							</ul>
+						</div>
+					</div>
+					</a>
+				</volist>
+					
+
+				</div>
+			</div>
+		</section>
+		<!-- end pricing -->
+
+
+</block>
