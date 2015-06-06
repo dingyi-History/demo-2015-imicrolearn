@@ -25,18 +25,18 @@
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a href="../index/index" class="navbar-brand">【i微学】</a>
+					<a href="<?php echo U('index/index');?>" class="navbar-brand">【i微学】</a>
 				</div>
 				
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
 					
-						<li><a href="">基础引路</a></li>
-						<li><a href="#pricing">经验进阶</a></li>
 						<li><a href="#pricing" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">学习方向</a>
 						<ul id="fangxiang" class="dropdown-menu" role="menu">
-   					 	<li><a href="#"  class="text-center">Android</a></li>
-    					<li><a href="#"  class="text-center">PHP</a></li>
+              <li><a href="#"  class="text-center">Android</a></li>
+              <li><a href="#"  class="text-center">php</a></li>
+              <li><a href="#"  class="text-center">javaweb</a></li>
+   					 	<li><a href="#"  class="text-center">mysql</a></li>
   						</ul>
 						</li>
 					
@@ -88,31 +88,57 @@
 		<div id ="cleannav"class="clearfix"></div>
 		
 		
+			<div class="container-fluid">
 
-		
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 wow bounceIn">
-						<h2 class="text-uppercase">所有教程</h2>
-					</div>
-				<?php if(is_array($showallcourse)): $i = 0; $__LIST__ = $showallcourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="../course/showonecourse?id=<?php echo ($vo["cid"]); ?>">
-					<div class="col-md-3 wow fadeIn" data-wow-delay="0.5s">
-						<div id ="courseshow"  class="pricing text-uppercase" >
-							<div class="pricing-title" style="padding:0px;">
-								<img id="courseimg" src="/imicrolearn/Public/images/courseimg/<?php echo ($vo["cimg"]); ?>.jpg" alt="" >
-							</div>
-							<ul>
-								<li style="padding:0px;"><h4><?php echo ($vo["cname"]); ?></h4></li>
-								<li><p><?php echo ($vo["ctitle"]); ?></p></li>
-							</ul>
-						</div>
-					</div>
-					</a><?php endforeach; endif; else: echo "" ;endif; ?>
+				<div id="coursetitle" class="row">
+				<div class="container">
+				<br>
+					<div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
+					<?php if(is_array($onecourse)): $i = 0; $__LIST__ = array_slice($onecourse,0,1,true);if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><h2 class="text-uppercase"><?php echo ($v["cname"]); ?></h2>
+					<p><?php echo ($v["ctitle"]); ?></p>
 					
+					</div>
+					<div class="col-md-3 wow fadeIn center-block" data-wow-delay="0.2s">
+							
+					<button type="button" class="btn btn-success btn-lg btn-block"><?php echo ($v["typename"]); ?></button>
+					<br>
+					
+					<button type="button" class="btn btn-warning btn-lg btn-block">收录</button>
+					</div><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+				</div>
+				<br>
+				</div>
+				<div class="container">
+					<div class="row">
+					<div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
+				<?php if(is_array($onecourse)): $i = 0; $__LIST__ = $onecourse;if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div id="stepid" class="text-center"><h1 ><?php echo ($vo["stepid"]); ?></h1></div>
+						
+					<div id="scontent">	
+				
+					<img src="/imicrolearn/Public/images/courseimg/stepimg/<?php echo ($vo["stepimg"]); ?>.jpg"  class="img-responsive" alt="Responsive image">
+			
+						<p><?php echo ($vo["scontent"]); ?></p>	
+						</div><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+				</div>
+					<div  class="col-md-3 hidden-xs	 wow fadeIn center-block " data-wow-delay="0.2s">
+					<br><br>
+						<ul class="list-group ">
+						<?php if(is_array($coursename)): $i = 0; $__LIST__ = array_slice($coursename,0,5,true);if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$cn): $mod = ($i % 2 );++$i;?><a href="../course/showonecourse?id=<?php echo ($cn["cid"]); ?>" class="list-group-item list-group-item-info">
+ 					<!-- <span class="badge">点击量</span> -->
+ 					 <h5 class="list-group-item-heading"><?php echo ($cn["cname"]); ?>
+					</h5>
+    				<p class="list-group-item-text"><?php echo ($cn["ctitle"]); ?></p>
+ 					
+ 					</a><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+						</ul>
+
+
+					</div>
 
 				</div>
-			</div>
+				</div>
 
+			</div>
 
 
 

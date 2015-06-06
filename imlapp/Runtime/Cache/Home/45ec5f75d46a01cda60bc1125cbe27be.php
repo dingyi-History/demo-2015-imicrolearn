@@ -12,6 +12,7 @@
 		<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/imicrolearn/Public/css/templatemo-style.css">
 		<link rel="stylesheet" href="/imicrolearn/Public/css/imicrolearn.css">
+		<link rel="shortcut icon" href="/imicrolearn/Public/favicon.ico">
 		<title>【i微学】一点一滴轻松学</title>
 	</head>
 	<body>
@@ -33,7 +34,6 @@
 						<li><a href="">基础引路</a></li>
 						<li><a href="#pricing">经验进阶</a></li>
 						<li><a href="#pricing" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">学习方向</a>
-
 						<ul id="fangxiang" class="dropdown-menu" role="menu">
    					 	<li><a href="#"  class="text-center">Android</a></li>
     					<li><a href="#"  class="text-center">PHP</a></li>
@@ -62,11 +62,11 @@
        
        <form action="../user/islogin" method="post"><div class="form-group">
     	<label for="name"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
-   		<input type="text" class="form-control" id="name" placeholder="用户名" name="name">
+   		<input type="text" class="form-control" id="name" placeholder="用户名" name="name" required>
   		</div>
   		<div class="form-group">
     	<label for="pwd"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></label>
-    	<input type="password" class="form-control" id="pwd" placeholder="密码" name="pwd">
+    	<input type="password" class="form-control" id="pwd" placeholder="密码" name="pwd" required>
   		</div>
   		<div class="checkbox">
     	<label>

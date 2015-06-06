@@ -45,7 +45,7 @@
 	<th class="text-center">步骤内容</th>
 	
 	<?php if(is_array($allcourse)): $i = 0; $__LIST__ = $allcourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-    	<td class="text-center"><?php echo ($vo["id"]); ?></td>
+    	<td class="text-center"><?php echo ($vo["cid"]); ?></td>
     	<td class="text-center"><?php echo ($vo["cname"]); ?></td>
     	<td class="text-center"><?php echo ($vo["ctitle"]); ?></td>
     	<td class="text-center"><?php echo ($vo["typeid"]); ?></td>

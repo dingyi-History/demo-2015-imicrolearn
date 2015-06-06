@@ -3,29 +3,29 @@
 <head>
 <meta charset="utf-8">
 <title>i微学后台管理</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="shortcut icon" href="/imicrolearn/Public/favicon.ico">
-<!-- Le styles -->
-<link href="/imicrolearn/Public/backend/css/twitter/bootstrap.css" rel="stylesheet">
-<link href="/imicrolearn/Public/backend/css/base.css" rel="stylesheet">
-<link href="/imicrolearn/Public/backend/css/admin.css" rel="stylesheet">
-<link href="/imicrolearn/Public/backend/css/twitter/responsive.css" rel="stylesheet">
-<link href="/imicrolearn/Public/backend/css/jquery-ui-1.8.23.custom.css" rel="stylesheet">
-<script src="/imicrolearn/Public/backend/js/plugins/modernizr.custom.32549.js"></script>
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif]-->
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 </head>
 	<body>
 
 		
 		<div id ="cleannav"class="clearfix"></div>
-		
-
+	   <div class="container">
+  	
 		
 <div id="login_page"> 
   <!-- Login page -->
@@ -57,13 +57,10 @@
 
 
 		
+    </div>
 		<div class="clearfix"></div>
 		
 		
 
-		<script type="text/javascript" src="/imicrolearn/Public/js/jquery.js"></script> 
-<script type="text/javascript" src="/imicrolearn/Public/backend/js/plugins/jquerypp.custom.js"></script> 
-<script type="text/javascript" src="/imicrolearn/Public/backend/js/plugins/jquery.bookblock.js"></script> 
-<script language="javascript" type="text/javascript" src="/imicrolearn/Public/backend/js/plugins/jquery.uniform.min.js"></script> 
 	</body>
 </html>

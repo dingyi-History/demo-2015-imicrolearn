@@ -1,16 +1,72 @@
 #cleannav{
-	height: 70px;
+	height: 50px;
 }
 
 #fangxiang li a{
 	height: 40px;
-	line-height: 40p;
+	line-height: 40px;
 }
 
 #fangxiang li a:hover{
 	color: #93B846;
 }
 
-#kapian	li{
-	padding: 5px;
+
+#courseimg{
+	width:100%;
+    max-height:200px;
+}
+
+#courseshow{
+	margin-top: 20px;
+	max-height: 280px;
+	overflow: hidden;
+	box-shadow: 5px 5px 5px #888888;
+
+	
+}
+#courseshow:hover{
+
+	border:1px solid #FF832c;
+}
+
+#stepid{
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: #AFCA59;
+	box-shadow: 2px 2px 2px #888888;
+	position: relative;
+	top:30px;
+	right:10px;
+}
+#stepid h1{
+	color: white;
+}
+
+#scontent{
+	padding: 20px;
+	min-height: 100px;
+	width: 100%;
+	margin: 10px;
+	border: 1px solid gray;
+	border-radius: 8px;
+	box-shadow: 0px 3px 3px #888888;
+}
+
+#scontent:hover{
+	border: 1px solid #2F57CD;
+	box-shadow: 0px 0px 0px #888888;
+}
+
+#coursetitle{
+	background: #2F57CD;
+}
+
+#coursetitle h2 ,#coursetitle small,#coursetitle  p{
+	color: white;
+
+}
+footer{
+	background: #c8c8c8;
 }

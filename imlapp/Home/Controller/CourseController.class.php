@@ -19,8 +19,14 @@ class CourseController extends CommonController
 	public function showonecourse(){
 		$courseid = I('get.id');
 		$courseview  = D('CourseView');
-		$data = $courseview->where("cid='$courseid'")->select();
+		$condition['cid'] = $courseid;
+		$data = $courseview->where($condition)->order('stepid')->select();
 		$this->assign('onecourse',$data);
+		
+		$typeid =$data[0]['typeid'];
+		$course =D('course');
+		$coursename = $course->typecourse($typeid,$courseid);
+		$this->assign('coursename',$coursename);
 		$this->display();
 	}
 

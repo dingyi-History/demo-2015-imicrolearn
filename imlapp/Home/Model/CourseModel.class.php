@@ -9,4 +9,13 @@ class CourseModel extends Model{
 		$data = $course->select();
 		return $data;
 	}
+
+	public function typecourse($typeid,$nowid)
+	{
+		$course = M('course');
+		$condition['ctypeid']=array('EQ',"$typeid");
+		$condition['cid']  = array('NEQ',"$nowid");
+		$data = $course->where($condition)->select();
+		return $data;
+	}
 }

@@ -7,6 +7,6 @@ class CourseViewModel extends ViewModel {
    public $viewFields = array( 
      'course'=>array('cid','cname','ctitle'),
      'coursetype'=>array('id'=>'typeid','typename', '_on'=>'course.ctypeid=coursetype.id'),
-     'stepcontent'=>array('scontent', 'stepid','_on'=>'course.cid=stepcontent.cid'),
+     'stepcontent'=>array('scontent', 'stepid','stepimg','_on'=>'stepcontent.cid=course.cid'),
    );
  }
