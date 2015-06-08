@@ -1,13 +1,28 @@
 <extend name="./base"/>
-
 <block name="main">
-快来加入我们吧
-<form action="./isregister" method="post">
-	
-	用户名<input type="text" name="name"><br>
-	密码<input type="text" name="pwd1"><br>
-	再输一次密码<input type="text"name="pwd2"><br>
-	邮箱<input type="text" name="email"><br>
-	<input type="submit" value="注册">
+
+<div class="container-fluid" style="padding:0;">
+<div id="login" >
+<div class="container">
+<div class="row">
+<div id="logintext" class="col-md-6 col-md-offset-3">
+<br><br><br><br><br>
+<form  action="./isregister" method="post" class="form-block">
+ 
+  <div class="form-group">
+  <h4 style="color:white;">用户名</h4>
+    <input class="form-control" type="text" required>
+    <h4 style="color:white;">密码</h4><input type="password" class="form-control" required>
+    <h4 style="color:white;">确认密码</h4><input type="password" class="form-control" required>
+    <h4 style="color:white;">邮箱</h4><input type="email" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-info">注册</button>
+  <a href="../user/login"><button type="button" class="btn btn-warning">登录</button></a>
 </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </block>

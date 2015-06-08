@@ -7,7 +7,7 @@ class AdminController extends CommonController
 	
 //查看所有用户
 	public function alluser(){
-		$this->isadmin();
+		//$this->isadmin();
 		$user = D('user');
 		$data =$user->alluser();
 		$this->assign('alluser',$data);
@@ -16,7 +16,7 @@ class AdminController extends CommonController
 
 //删除单个用户
 	public function deloneuser(){
-		$this->isadmin();
+		//$this->isadmin();
 		$user = D('user');
 		$id = I('get.id');
 		$rs = $user->deloneuser($id);//获取了一个删除记录数
@@ -28,7 +28,7 @@ class AdminController extends CommonController
 
 //查看所有管理员
 	public function alladmin(){
-		$this->isadmin();
+		//$this->isadmin();
 		$admin = D('admin');
 		$rs = $admin ->alladmin();
 		$this->assign('alladmin',$rs);

@@ -6,12 +6,28 @@ class CourseController extends CommonController
 {
 
 //展示所有教程
-	public function showallcourse(){
+	public function showcourse(){
 		$course = D('course');
 		$data = $course ->showallcourse();
 		$this->assign('showallcourse',$data);
-		//dump($data);
+		$type = array('i'=>'1');
+		$this->assign('type',$type);
 		$this->display();
+	}
+
+//分类显示教程
+	public function typecourse(){
+		$typeid = I('get.id');
+		$course = D('course');
+		$nowid=null;
+		$data = $course ->typecourse($typeid,$nowid);
+		$this->assign('showallcourse',$data);
+
+		$type = D('coursetype');
+		$d = $type->showtype($typeid);
+		$this->assign('type',$d);
+
+		$this->display('showcourse');
 	}
 
 

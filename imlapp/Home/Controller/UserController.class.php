@@ -59,4 +59,11 @@ class UserController extends CommonController {
         $this->issuccess($rs,$msg0,$msg1,$url);
 
     }
+
+
+//注销
+    public function logout(){
+        session('username',null); // 删除name
+        $this->success('注销成功', '/imicrolearn');
+    }
 }

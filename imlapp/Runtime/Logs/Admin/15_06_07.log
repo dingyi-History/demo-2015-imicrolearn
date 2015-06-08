@@ -1,0 +1,53 @@
+[ 2015-06-07T17:41:19+08:00 ] ::1 /imicrolearn/index.php/admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000176s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002052s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003166s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000483s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020425s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002247s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002781s ]
+
+[ 2015-06-07T17:41:32+08:00 ] ::1 /imicrolearn/index.php/admin/course/showallcourse
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002585s ]
+ERR: 非法操作:showallcourse
+
+[ 2015-06-07T17:43:15+08:00 ] ::1 /imicrolearn/index.php/admin/course/allcourse
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002192s ]
+SQL: SHOW COLUMNS FROM `iml_course` [ RunTime:0.0073s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `iml_stepcontent` [ RunTime:0.0068s ]
+SQL: SELECT course.cid AS cid,course.cname AS cname,course.ctitle AS ctitle,coursetype.id AS typeid,coursetype.typename AS typename,stepcontent.scontent AS scontent,stepcontent.stepid AS stepid FROM iml_course course  JOIN iml_coursetype coursetype ON course.ctypeid=coursetype.id  JOIN iml_stepcontent stepcontent ON course.cid=stepcontent.cid  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000462s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028659s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028997s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001568s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001855s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001939s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002227s ]
+

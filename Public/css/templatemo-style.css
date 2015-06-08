@@ -150,8 +150,10 @@ img
 .navbar-default .nav li a:focus,
 .navbar-default .nav li a.current
     {
-        color: #28a7e9;
+        color: #ff832c;
+
     }
+
 
 .navbar-default .navbar-toggle
     {
@@ -351,6 +353,7 @@ img
         background: url('../images/contact-bg.jpg') no-repeat;
         background-size: cover;
         color: #fff;
+        background-attachment: fixed;
     }
 #contact h2
     {

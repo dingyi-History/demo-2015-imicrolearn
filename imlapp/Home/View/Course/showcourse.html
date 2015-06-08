@@ -1,0 +1,53 @@
+<extend name="./base"/>
+<block name="main">
+
+			<div class="container-fluid">
+				<div id="coursetitle" class="row">
+				<div class="container">
+				<br>					
+
+				<volist name="type" id="v"  offset="0" length='1' empty="暂时没有数据">
+
+					<div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
+					<br>	
+					<h2 class="text-uppercase">{$v.typename|default="全部"}</h2>
+					<p>{$v.typename|default="全部"}</p>
+					
+					</div>
+					<div class="col-md-3 wow fadeIn center-block" data-wow-delay="0.2s">
+							
+					<button type="button" class="btn btn-info btn-lg btn-block">{$v.typename|default="全部"}</button>
+					<br>
+					
+					<button type="button" class="btn btn-warning btn-lg btn-block">我的</button>
+					</div>
+					</volist>
+				</div>
+				<br>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+				<volist name="showallcourse" id="vo">
+				<a href="../course/showonecourse?id={$vo.cid}">
+					<div class="col-md-3 wow fadeIn" data-wow-delay="0.5s">
+						<div id ="courseshow"  class="pricing text-uppercase" >
+							<div class="pricing-title" style="padding:0px;">
+								<img id="courseimg" src="__PUBLIC__/images/courseimg/{$vo.cimg}.jpg" alt="" >
+							</div>
+							<ul>
+								<li style="padding:0px;"><h4>{$vo.cname}</h4></li>
+								<li><p>{$vo.ctitle}</p></li>
+							</ul>
+						</div>
+					</div>
+					</a>
+				</volist>
+					
+
+				</div>
+			</div>
+
+
+
+</block>

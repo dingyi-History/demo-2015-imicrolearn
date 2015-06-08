@@ -14,6 +14,7 @@ return array(
     'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  'iml_',    // 数据库表前缀
 
+     'URL_MODEL'             =>  2,       // URL访问模式,可选参数0、1、2、3,代表以下四种模式：
 
     //默认错误跳转对应的模板文件
     'TMPL_ACTION_ERROR' => APP_PATH . 'Common/Common/rs_jump.php',

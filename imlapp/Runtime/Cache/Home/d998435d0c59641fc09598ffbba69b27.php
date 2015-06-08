@@ -25,28 +25,29 @@
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a href="<?php echo U('index/index');?>" class="navbar-brand">【i微学】</a>
+					<a href="../index/index" class="navbar-brand">【i微学】</a>
 				</div>
 				
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
 					
-						<li><a href="#pricing" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">学习方向</a>
-						<ul id="fangxiang" class="dropdown-menu" role="menu">
-              <li><a href="#"  class="text-center">Android</a></li>
-              <li><a href="#"  class="text-center">php</a></li>
-              <li><a href="#"  class="text-center">javaweb</a></li>
-   					 	<li><a href="#"  class="text-center">mysql</a></li>
-  						</ul>
-						</li>
+             
+             <li><a href="#" data-toggle="modal" data-target="#fx">方向</a></li>
 					
-						<li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+				         
+            <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+           
 					</ul>
 
 					
 				</div>
 				
 			</div>
+      <div class="row" >
+      <div id="full" class="container-fluid">
+      <div id="cb"></div>
+      </div>
+      </div>
 </nav>
 
 <!-- Modal -->
@@ -60,7 +61,7 @@
       </div>
       <div class="modal-body">
        
-       <form action="../user/islogin" method="post"><div class="form-group">
+       <form action="/imicrolearn/user/islogin" method="post"><div class="form-group">
     	<label for="name"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></label>
    		<input type="text" class="form-control" id="name" placeholder="用户名" name="name" required>
   		</div>
@@ -76,10 +77,40 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-success">登录</button>
-        <a href="../user/register">
+        <a href="/imicrolearn/user/register">
         <button type="button" class="btn btn-primary">注册</button>
         </a>
      </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade " id="fx" tabindex="-1" role="dialog" aria-labelledby="fx1" aria-hidden="true">
+
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="fx1">请选择方向</h4>
+      </div>
+      <div class="modal-body">
+      
+
+            <div class="list-group">
+            <?php if(is_array($alltype)): $i = 0; $__LIST__ = $alltype;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5><?php echo ($vo["typename"]); ?></h5></a><?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
+      
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary btn-lg btn-block">看全部经验</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block">看全部教程</button>
+       
+        </a>
       </div>
       
     </div>
@@ -113,7 +144,7 @@
 					<div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
 				<?php if(is_array($onecourse)): $i = 0; $__LIST__ = $onecourse;if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div id="stepid" class="text-center"><h1 ><?php echo ($vo["stepid"]); ?></h1></div>
 						
-					<div id="scontent">	
+					<div id="scontent" class="panel panel-info">	
 				
 					<img src="/imicrolearn/Public/images/courseimg/stepimg/<?php echo ($vo["stepimg"]); ?>.jpg"  class="img-responsive" alt="Responsive image">
 			
@@ -145,12 +176,50 @@
 		
 		<div class="clearfix"></div>
 			<footer>
-			<div class="container-fluid">
-				<div class="row">
-					<p>Copyright © 2015 zero0.cn |   <a href="http://www.imicrolearn.com/" title="i微学" target="_blank">imicrolearn</a></p>
+			<div id="full" class="container-fluid">
+			<div id="cb"></div>
+			<div id="footer">
+				<div class="container">
+				<div class="row"  style="color:white;">
+					<div class="col-md-4">
+					<br><br><br><br>
+					<img id="logo" src="/imicrolearn/Public/imlogo.png" alt="">
+					<div class="text-center">imicrolearn</div>
+					</div>
+
+					<div class="col-md-4 hidden-xs">
+					<br><br>
+					<div class="list-group">
+  <a href="" class="list-group-item list-group-item-success">加入我们</a>
+  <a href="#" class="list-group-item list-group-item-info">基础引路</a>
+  <a href="#" class="list-group-item list-group-item-warning">经验进阶</a>
+  <a href="#" class="list-group-item list-group-item-danger">梦想与现实</a>
+</div>
+					</div>
+					<div class="col-md-4 hidden-xs hidden-md">
+					<br><br>
+<div class="list-group">
+  <a href="../user/login" class="list-group-item list-group-item-success">加入我们</a>
+  <a href="#" class="list-group-item list-group-item-info">基础引路</a>
+  <a href="#" class="list-group-item list-group-item-warning">经验进阶</a>
+  <a href="#" class="list-group-item list-group-item-danger">梦想与现实</a>
+</div>
+
+					</div>
+				</div>
+				<div  class="row" style="color:white;">
+				<br>
+					<p>Copyright © 2015 zero0.cn |   <a style="color:white;" href="http://www.imicrolearn.com" target="_blank">imicrolearn.com</a></p>
+				</div>
 				</div>
 			</div>
-		</footer>
+			</div>
+			<div class="row" >
+			<div id="full" class="container-fluid">
+			<div id="cb"></div>
+			</div>
+			</div>
+	</footer>
 		<script src="/imicrolearn/Public/js/jquery.js"></script>
 		<script src="/imicrolearn/Public/js/bootstrap.min.js"></script>
 		<script src="/imicrolearn/Public/js/wow.min.js"></script>

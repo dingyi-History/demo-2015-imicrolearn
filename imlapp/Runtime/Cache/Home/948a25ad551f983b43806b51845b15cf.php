@@ -31,22 +31,29 @@
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
 					
-						<li><a href="">基础引路</a></li>
-						<li><a href="#pricing">经验进阶</a></li>
-						<li><a href="#pricing" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">学习方向</a>
+             
+						<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">学习方向</a>
 						<ul id="fangxiang" class="dropdown-menu" role="menu">
-   					 	<li><a href="#"  class="text-center">Android</a></li>
-    					<li><a href="#"  class="text-center">PHP</a></li>
+              <li><a href="#"  class="text-center">Android</a></li>
+              <li><a href="#"  class="text-center">php</a></li>
+              <li><a href="#"  class="text-center">javaweb</a></li>
+   					 	<li><a href="#"  class="text-center">mysql</a></li>
   						</ul>
 						</li>
-					
-						<li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+				         
+            <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+           
 					</ul>
 
 					
 				</div>
 				
 			</div>
+      <div class="row" >
+      <div id="full" class="container-fluid">
+      <div id="cb"></div>
+      </div>
+      </div>
 </nav>
 
 <!-- Modal -->
@@ -76,7 +83,7 @@
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-success">登录</button>
-        <a href="../user/register">
+        <a href="/imicrolearn/index.php/user/register">
         <button type="button" class="btn btn-primary">注册</button>
         </a>
      </form>
@@ -85,16 +92,36 @@
     </div>
   </div>
 </div>
+
+
+
 		<div id ="cleannav"class="clearfix"></div>
 		
 		
 
-		
+			<div class="container-fluid">
+
+				<div id="coursetitle" class="row" style="background:gray;">
+				<div class="container">
+				<br>
+					<div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
+					<?php if(is_array($showallcourse)): $i = 0; $__LIST__ = array_slice($showallcourse,0,1,true);if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><h2 class="text-uppercase">全部</h2>
+					<p></p>
+					
+					</div>
+					<div class="col-md-3 wow fadeIn center-block" data-wow-delay="0.2s">
+							
+					<button type="button" class="btn btn-success btn-lg btn-block">全部</button>
+					<br>
+					
+					<button type="button" class="btn btn-warning btn-lg btn-block">收录</button>
+					</div><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
+				</div>
+				<br>
+				</div>
+
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 wow bounceIn">
-						<h2 class="text-uppercase">所有教程</h2>
-					</div>
 				<?php if(is_array($showallcourse)): $i = 0; $__LIST__ = $showallcourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="../course/showonecourse?id=<?php echo ($vo["cid"]); ?>">
 					<div class="col-md-3 wow fadeIn" data-wow-delay="0.5s">
 						<div id ="courseshow"  class="pricing text-uppercase" >
@@ -119,12 +146,50 @@
 		
 		<div class="clearfix"></div>
 			<footer>
-			<div class="container-fluid">
-				<div class="row">
-					<p>Copyright © 2015 zero0.cn |   <a href="http://www.imicrolearn.com/" title="i微学" target="_blank">imicrolearn</a></p>
+			<div id="full" class="container-fluid">
+			<div id="cb"></div>
+			<div id="footer">
+				<div class="container">
+				<div class="row"  style="color:white;">
+					<div class="col-md-4">
+					<br><br><br><br>
+					<img id="logo" src="/imicrolearn/Public/imlogo.png" alt="">
+					<div class="text-center">imicrolearn</div>
+					</div>
+
+					<div class="col-md-4 hidden-xs">
+					<br><br>
+					<div class="list-group">
+  <a href="" class="list-group-item list-group-item-success">加入我们</a>
+  <a href="#" class="list-group-item list-group-item-info">基础引路</a>
+  <a href="#" class="list-group-item list-group-item-warning">经验进阶</a>
+  <a href="#" class="list-group-item list-group-item-danger">梦想与现实</a>
+</div>
+					</div>
+					<div class="col-md-4 hidden-xs hidden-md">
+					<br><br>
+<div class="list-group">
+  <a href="../user/login" class="list-group-item list-group-item-success">加入我们</a>
+  <a href="#" class="list-group-item list-group-item-info">基础引路</a>
+  <a href="#" class="list-group-item list-group-item-warning">经验进阶</a>
+  <a href="#" class="list-group-item list-group-item-danger">梦想与现实</a>
+</div>
+
+					</div>
+				</div>
+				<div  class="row" style="color:white;">
+				<br>
+					<p>Copyright © 2015 zero0.cn |   <a style="color:white;" href="http://www.imicrolearn.com" target="_blank">imicrolearn.com</a></p>
+				</div>
 				</div>
 			</div>
-		</footer>
+			</div>
+			<div class="row" >
+			<div id="full" class="container-fluid">
+			<div id="cb"></div>
+			</div>
+			</div>
+	</footer>
 		<script src="/imicrolearn/Public/js/jquery.js"></script>
 		<script src="/imicrolearn/Public/js/bootstrap.min.js"></script>
 		<script src="/imicrolearn/Public/js/wow.min.js"></script>

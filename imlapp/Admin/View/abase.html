@@ -1,37 +1,54 @@
-<!DOCTYPE html>
-<html class="no-js login" lang="zh-CN">
+<!doctype html>
+<html class="no-js">
 <head>
-<meta charset="utf-8">
-<title>i微学后台管理</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<link rel="shortcut icon" href="__PUBLIC__/favicon.ico">
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="http://cdn.bootcss.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>imicrolearn</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" href="__PUBLIC__/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="imicrolearn" />
+  <link rel="stylesheet" href="__PUBLIC__/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="__PUBLIC__/css/admin.css">
 </head>
-	<body>
+<body>
+<include file="Public:header" />
+<!-- ---------------------------------------------------------------------------------------- -->
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+<include file="Public:sidebar" />
+  <div class="admin-content">
+<block name="main"></block>
+</div>
+</div>
+<!-- ---------------------------------------------------------------------------------------- -->
+<include file="Public:footer" />
 
-		<block name="header"><include file="Public:header" /></block>
-		<div id ="cleannav"class="clearfix"></div>
-	   <div class="container">
-  	<block name="left"></block>
-		<block name="main"></block>
-		<block name="right"></block>
-    </div>
-		<div class="clearfix"></div>
-		<include file="Public:footer" />
-		
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
 
-	</body>
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__PUBLIC__/js/polyfill/rem.min.js"></script>
+<script src="__PUBLIC__/js/polyfill/respond.min.js"></script>
+<script src="__PUBLIC__/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="__PUBLIC__/js/app.js"></script>
+</body>
 </html>
+
+<script>
+   $('#jz').on('click', function() {
+    progress.done(true);
+  });
+
+
+</script>

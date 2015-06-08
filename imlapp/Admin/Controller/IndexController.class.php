@@ -32,7 +32,7 @@ class IndexController extends CommonController {
 
     //进入后台主页控制器
     public function adminhome(){
-        $this->isadmin();
+        //$this->isadmin();
 		$this->display();
 	
     }
