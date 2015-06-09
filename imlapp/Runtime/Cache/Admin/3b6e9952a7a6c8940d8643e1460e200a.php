@@ -60,7 +60,8 @@
           <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav">
             <li ><a href="../admin/alluser"  class="am-cf"><span class="am-icon-check"></span> 用户管理<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
             <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 经验管理</a></li>
-            <li><a href="../course/allcourse"><span class="am-icon-th"></span> 教程管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li> 
+            <li><a href="../course/allcourse"><span class="am-icon-th"></span> 教程管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>   
+            <li><a href="../coursetype/alltype"><span class="am-icon-th"></span>分类管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li> 
              <li><a href="../admin/alladmin"><span class="am-icon-th">
              </span> 管理员列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
           </ul>
@@ -73,14 +74,14 @@
       <div class="am-panel am-panel-default admin-sidebar-panel">
         <div class="am-panel-bd">
           <p><span class="am-icon-bookmark"></span> 公告</p>
-          <p>时光静好，与君语；细水流年，与君同。—— Amaze UI</p>
+          <p>时光静好，与君语；细水流年，与君同。—— i微学</p>
         </div>
       </div>
 
       <div class="am-panel am-panel-default admin-sidebar-panel">
         <div class="am-panel-bd">
-          <p><span class="am-icon-tag"></span> wiki</p>
-          <p>Welcome to the Amaze UI wiki!</p>
+          <p><span class="am-icon-tag"></span> 欢迎</p>
+          <p>imicrolearn</p>
         </div>
       </div>
     </div>

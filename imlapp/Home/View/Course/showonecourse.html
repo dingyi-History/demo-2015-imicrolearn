@@ -4,16 +4,17 @@
 
 				<div id="coursetitle" class="row">
 				<div class="container">
-				<br>
+				<br>	
+				<volist name="onecourse" id="v"  offset="0" length='1' empty="暂时没有数据">
 					<div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
-					<volist name="onecourse" id="v"  offset="0" length='1' empty="暂时没有数据">
+				
 					<h2 class="text-uppercase">{$v.cname}</h2>
 					<p>{$v.ctitle}</p>
 					
 					</div>
 					<div class="col-md-3 wow fadeIn center-block" data-wow-delay="0.2s">
 							
-					<button type="button" class="btn btn-success btn-lg btn-block">{$v.typename}</button>
+					<a href="../course/typecourse?id={$v.typeid}"><button type="button" class="btn btn-success btn-lg btn-block">{$v.typename}</button></a>
 					<br>
 					
 					<button type="button" class="btn btn-warning btn-lg btn-block">收录</button>
@@ -60,6 +61,5 @@
 				</div>
 
 			</div>
-
-
+<hr><br>
 </block>

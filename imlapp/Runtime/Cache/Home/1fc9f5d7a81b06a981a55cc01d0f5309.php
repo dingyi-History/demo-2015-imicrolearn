@@ -1,22 +1,27 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
-<html lang="zh-cn">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-		<link rel="stylesheet" href="/imicrolearn/Public/css/animate.min.css">
-		<link rel="stylesheet" href="/imicrolearn/Public/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/imicrolearn/Public/css/font-awesome.min.css">
-		<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="/imicrolearn/Public/css/templatemo-style.css">
-		<link rel="stylesheet" href="/imicrolearn/Public/css/imicrolearn.css">
-		<link rel="shortcut icon" href="/imicrolearn/Public/favicon.ico">
-		<title>【i微学】一点一滴轻松学</title>
-	</head>
-	<body>
-		<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>【i微学】</title>
+  <meta name="description" content="这是一个 index 页面">
+  <meta name="keywords" content="index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="icon" href="/imicrolearn/Public/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="imicrolearn" />
+  <link rel="stylesheet" href="/imicrolearn/Public/css/amazeui.min.css"/>
+  <link rel="stylesheet" href="/imicrolearn/Public/css/admin.css">
+    <link rel="stylesheet" href="/imicrolearn/Public/css/animate.min.css">
+    <link rel="stylesheet" href="/imicrolearn/Public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/imicrolearn/Public/css/font-awesome.min.css">
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/imicrolearn/Public/css/templatemo-style.css">
+    <link rel="stylesheet" href="/imicrolearn/Public/css/imicrolearn.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
 			<div class="container">
 
 				<div class="navbar-header">
@@ -133,8 +138,8 @@
             <div class="list-group">
          
             <a href="/imicrolearn/user/userinfo" class="text-center list-group-item list-group-item-info"><h5>查看我的收录</h5></a>
-           
-            <a href="/imicrolearn/course/addcourse" class="text-center list-group-item list-group-item-info"><h5>我要分享</h5></a>
+            <a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5>查看我的专辑</h5></a>
+            <a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5>我要分享</h5></a>
          
             </div>
       
@@ -180,59 +185,91 @@
     </div>
   </div>
 </div>
-		<div id ="cleannav"class="clearfix"></div>
+  <div id ="cleannav"class="clearfix"></div>
+  <hr>
+<!-- ---------------------------------------------------------------------------------------- -->
+<div class="container-fluid">
 
-		
+<div id="usertitle" class="am-g">
 
-			<div class="container-fluid">
-				<div id="coursetitle" class="row">
-				<div class="container">
-				<br>					
+<div class="container">
+<br>
+  <div class="am-u-sm-4">
+  <img src="/imicrolearn/Public/imlogo.png" alt="" id="touxiang">
 
-				<?php if(is_array($type)): $i = 0; $__LIST__ = array_slice($type,0,1,true);if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
-					<br>	
-					<h2 class="text-uppercase"><?php echo ((isset($v["typename"]) && ($v["typename"] !== ""))?($v["typename"]):"全部"); ?></h2>
-					<p><?php echo ((isset($v["typename"]) && ($v["typename"] !== ""))?($v["typename"]):"全部"); ?></p>
-					
-					</div>
-					<div class="col-md-3 wow fadeIn center-block" data-wow-delay="0.2s">
-							
-					<button type="button" class="btn btn-info btn-lg btn-block"><?php echo ((isset($v["typename"]) && ($v["typename"] !== ""))?($v["typename"]):"全部"); ?></button>
-					<br>
-					
-					<a href="../user/userinfo"><button type="button" class="btn btn-warning btn-lg btn-block">我的</button></a>
-					</div><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
-				</div>
-				<br>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-				<?php if(is_array($showallcourse)): $i = 0; $__LIST__ = $showallcourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="../course/showonecourse?id=<?php echo ($vo["cid"]); ?>">
-					<div class="col-md-3 wow fadeIn" data-wow-delay="0.5s">
-						<div id ="courseshow"  class="pricing text-uppercase" >
-							<div class="pricing-title" style="padding:0px;">
-								<img id="courseimg" src="/imicrolearn/Public/images/courseimg/<?php echo ($vo["cimg"]); ?>.jpg" alt="" >
-							</div>
-							<ul>
-								<li style="padding:0px;"><h4><?php echo ($vo["cname"]); ?></h4></li>
-								<li><p><?php echo ($vo["ctitle"]); ?></p></li>
-							</ul>
-						</div>
-					</div>
-					</a><?php endforeach; endif; else: echo "" ;endif; ?>
-					
+  </div>
+  <div class="am-u-sm-6">
+  <br>
+<h3>你好！分享是美好的品质。</h3>
+  </div>
 
-				</div>
-			</div>
+<div class="am-u-sm-2">
+  <button type="button" class="btn btn-info btn-lg btn-block">我的</button>
+          <br>    
+  <a href=""><button type="button" class="btn btn-success btn-lg btn-block">分享</button></a>
+</div>
+</div>
+<br>
+</div>
+<hr>
+
+<div class="container">
+
+<block name="main">
+
+<form action="" method="post">
+<article class="am-comment"> <!-- 评论容器 -->
+
+  <div class="am-comment-main"> <!-- 评论内容容器 -->
+    <header class="am-comment-hd">
+      <!--<h3 class="am-comment-title">评论标题</h3>-->
+      <div class="am-comment-meta"> <!-- 评论元数据 -->
+      <p><input type="text" class="am-form-field am-round" style="width:50%;" placeholder="点击添加标题" required/></p>
+      </div>
+    </header>
+
+    <div class="am-comment-bd">
+	<div class="am-form-group" >
+      <textarea style="width:100%; border-radius:5px;"class="" rows="5" id="doc-ta-1" placeholder="点击添加分享内容" required></textarea>
+    </div>
+
+    </div> <!-- 评论内容 -->
+  </div>
+  <div class="am-g">
+  <br>
+  	<div class="am-u-sm-4 am-u-sm-offset-4">
+  		<button type="submit" class="btn btn-success btn-lg btn-block">分享</button>
+  	</div>
+
+  </div>
+  <hr>
+</article>
+</form>
 
 
+<?php if(is_array($allway)): $i = 0; $__LIST__ = $allway;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$way): $mod = ($i % 2 );++$i;?><article class="am-comment"> <!-- 评论容器 -->
+  <a href="">
+    <img class="am-comment-avatar" alt="" style="width:50px;height:50px;" /> <!-- 评论者头像 -->   
+  </a>
 
-<hr><br>
+  <div class="am-comment-main"> <!-- 评论内容容器 -->
+    <header class="am-comment-hd">
+      <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($way["wtitle"]); ?></h4>
+      <div class="am-comment-meta am-text-right"> <!-- 评论元数据 -->
+        分享于 <time datetime=""><?php echo ($way["wdate"]); ?></time>
+      </div>
+    </header>
 
-		
-		<div class="clearfix"></div>
-			<footer>
+    <div class="am-comment-bd"><pre><?php echo ($way["wcontent"]); ?></pre></div> <!-- 评论内容 -->
+  </div>
+  <hr>
+</article><?php endforeach; endif; else: echo "" ;endif; ?>
+
+
+</div></div>
+<hr>
+<!-- ---------------------------------------------------------------------------------------- -->
+	<footer>
 			<div id="full" class="container-fluid">
 			<div id="cb"></div>
 			<div id="footer">
@@ -278,10 +315,34 @@
 			</div>
 			</div>
 	</footer>
-		<script src="/imicrolearn/Public/js/jquery.js"></script>
-		<script src="/imicrolearn/Public/js/bootstrap.min.js"></script>
-		<script src="/imicrolearn/Public/js/wow.min.js"></script>
-		<script src="/imicrolearn/Public/js/jquery.singlePageNav.min.js"></script>
-		<script src="/imicrolearn/Public/js/custom.js"></script>
-	</body>
+
+<a class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="/imicrolearn/Public/js/polyfill/rem.min.js"></script>
+<script src="/imicrolearn/Public/js/polyfill/respond.min.js"></script>
+<script src="/imicrolearn/Public/js/amazeui.legacy.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="/imicrolearn/Public/js/jquery.min.js"></script>
+<script src="/imicrolearn/Public/js/amazeui.min.js"></script>
+<!--<![endif]-->
+<script src="/imicrolearn/Public/js/app.js"></script>
+<script src="/imicrolearn/Public/js/jquery.js"></script>
+    <script src="/imicrolearn/Public/js/bootstrap.min.js"></script>
+    <script src="/imicrolearn/Public/js/wow.min.js"></script>
+    <script src="/imicrolearn/Public/js/jquery.singlePageNav.min.js"></script>
+    <script src="/imicrolearn/Public/js/custom.js"></script>
+</body>
 </html>
+
+<script>
+   $('#jz').on('click', function() {
+    progress.done(true);
+  });
+
+
+</script>

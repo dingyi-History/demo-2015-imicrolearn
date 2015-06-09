@@ -1,0 +1,43 @@
+<extend name="./base"/>
+
+<block name="main">
+
+<div class="container-fluid">
+<div id="login" >
+<div class="container">
+<div class="row">
+<div id="logintext" class="col-md-6 col-md-offset-3">
+<br><br><br>
+<h1 style="color:white;">分享&nbsp;<small style="color:white;">即缔造</small></h1>
+<h4 style="color:white;">请按步骤填写分享的教程，感谢您的奉献。</h4>
+<br>
+<form  action="../course/isaddcourse" method="post" class="form-block">
+ 
+  <div class="form-group">
+   <h5 style="color:white;">教程分类选择：</h5>
+	<select class="form-control">
+	<volist name="alltype" id="vo">
+    <option>{$vo.typename}</option>
+   </volist>
+  </select>
+
+  <h5 style="color:white;">教程标题：</h5>
+    <input class="form-control" type="text" required  name="coursename">
+
+    <h5 style="color:white;">教程简介：</h5>
+    <input type="password" class="form-control" required name="coursetitle">
+
+ <h5 id="step" style="color:white;">教程步骤：1</h5>
+   <textarea class="form-control" rows="3"></textarea>
+<button type="button" class="btn btn-default">添加步骤</button>
+
+  </div>
+
+ 	<button type="submit" class="btn btn-info pull-right">提交</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</block>

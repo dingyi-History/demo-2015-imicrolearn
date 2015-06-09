@@ -184,51 +184,42 @@
 
 		
 
-			<div class="container-fluid">
-				<div id="coursetitle" class="row">
-				<div class="container">
-				<br>					
+<div class="container-fluid">
+<div id="login" >
+<div class="container">
+<div class="row">
+<div id="logintext" class="col-md-6 col-md-offset-3">
+<br><br><br>
+<h1 style="color:white;">分享&nbsp;<small style="color:white;">即缔造</small></h1>
+<h4 style="color:white;">请按步骤填写分享的教程，感谢您的奉献。</h4>
+<br>
+<form  action="../course/isaddcourse" method="post" class="form-block">
+ 
+  <div class="form-group">
+   <h5 style="color:white;">教程分类选择：</h5>
+	<select class="form-control">
+	<?php if(is_array($alltype)): $i = 0; $__LIST__ = $alltype;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option><?php echo ($vo["typename"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+  </select>
 
-				<?php if(is_array($type)): $i = 0; $__LIST__ = array_slice($type,0,1,true);if( count($__LIST__)==0 ) : echo "暂时没有数据" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="col-md-9 wow fadeIn" data-wow-delay="0.2s">
-					<br>	
-					<h2 class="text-uppercase"><?php echo ((isset($v["typename"]) && ($v["typename"] !== ""))?($v["typename"]):"全部"); ?></h2>
-					<p><?php echo ((isset($v["typename"]) && ($v["typename"] !== ""))?($v["typename"]):"全部"); ?></p>
-					
-					</div>
-					<div class="col-md-3 wow fadeIn center-block" data-wow-delay="0.2s">
-							
-					<button type="button" class="btn btn-info btn-lg btn-block"><?php echo ((isset($v["typename"]) && ($v["typename"] !== ""))?($v["typename"]):"全部"); ?></button>
-					<br>
-					
-					<a href="../user/userinfo"><button type="button" class="btn btn-warning btn-lg btn-block">我的</button></a>
-					</div><?php endforeach; endif; else: echo "暂时没有数据" ;endif; ?>
-				</div>
-				<br>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-				<?php if(is_array($showallcourse)): $i = 0; $__LIST__ = $showallcourse;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="../course/showonecourse?id=<?php echo ($vo["cid"]); ?>">
-					<div class="col-md-3 wow fadeIn" data-wow-delay="0.5s">
-						<div id ="courseshow"  class="pricing text-uppercase" >
-							<div class="pricing-title" style="padding:0px;">
-								<img id="courseimg" src="/imicrolearn/Public/images/courseimg/<?php echo ($vo["cimg"]); ?>.jpg" alt="" >
-							</div>
-							<ul>
-								<li style="padding:0px;"><h4><?php echo ($vo["cname"]); ?></h4></li>
-								<li><p><?php echo ($vo["ctitle"]); ?></p></li>
-							</ul>
-						</div>
-					</div>
-					</a><?php endforeach; endif; else: echo "" ;endif; ?>
-					
+  <h5 style="color:white;">教程标题：</h5>
+    <input class="form-control" type="text" required  name="coursename">
 
-				</div>
-			</div>
+    <h5 style="color:white;">教程简介：</h5>
+    <input type="password" class="form-control" required name="coursetitle">
 
+ <h5 id="step" style="color:white;">教程步骤：1</h5>
+   <textarea class="form-control" rows="3"></textarea>
+<button type="button" class="btn btn-default">添加步骤</button>
 
+  </div>
 
-<hr><br>
+ 	<button type="submit" class="btn btn-info pull-right">提交</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 		
 		<div class="clearfix"></div>
@@ -242,7 +233,7 @@
 					<br><br>
 					<img id="logo" src="/imicrolearn/Public/imlogo.png" alt="">
 					<div class="text-center">imicrolearn</div>
-					<button data-am-smooth-scroll type="button" class="btn btn-success">回到顶部</button>
+					<button  data-am-smooth-scroll type="button" class="btn btn-success">回到顶部</button>
 					</div>
 
 					<div class="col-md-4 hidden-xs">

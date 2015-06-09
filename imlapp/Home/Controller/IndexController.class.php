@@ -4,9 +4,7 @@ use Think\Controller;
 class IndexController extends CommonController {
 	
     public function index(){
-    	$username = $_SESSION['username'];
-    	$this->assign('showusername',$username);
-
+    	$this->loginover();
     	$this->showtype();
     	$this->display();
     }

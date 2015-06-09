@@ -60,7 +60,8 @@
           <ul class="am-list am-collapse admin-sidebar-sub " id="collapse-nav">
             <li ><a href="../admin/alluser"  class="am-cf"><span class="am-icon-check"></span> 用户管理<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
             <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 经验管理</a></li>
-            <li><a href="../course/allcourse"><span class="am-icon-th"></span> 教程管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>   <li><a href="../course/allcourse"><span class="am-icon-th"></span>分类管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li> 
+            <li><a href="../course/allcourse"><span class="am-icon-th"></span> 教程管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>   
+            <li><a href="../coursetype/alltype"><span class="am-icon-th"></span>分类管理<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li> 
              <li><a href="../admin/alladmin"><span class="am-icon-th">
              </span> 管理员列表<span class="am-badge am-badge-secondary am-margin-right am-fr">24</span></a></li>
           </ul>
@@ -95,19 +96,17 @@
         <table class="am-table am-table-bd am-table-striped admin-content-table am-table-hover am-text-nowrap">
           <thead>
           <tr>
-         <th class="am-text-justify">用户ID</th>
-         <th class="am-text-justify">用户名</th>
-         <th class="am-text-justify">密码</th>
-         <th class="am-text-justify">邮箱</th>
+         <th class="am-text-justify">分类ID</th>
+         <th class="am-text-justify">分类名</th>
+
          <th class="am-text-justify">编辑</th>
           </tr>
           </thead>
           <tbody>
-          	<?php if(is_array($alluser)): $i = 0; $__LIST__ = $alluser;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+          	<?php if(is_array($alltype)): $i = 0; $__LIST__ = $alltype;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
           <td><span class="am-badge am-badge-success"><?php echo ($vo["id"]); ?></span></td>
-          <td><?php echo ($vo["name"]); ?></td>
-          <td><?php echo (md5($vo["pwd"])); ?></td>
-          <td><?php echo ($vo["email"]); ?></td>
+			<td><?php echo ($vo["typename"]); ?></td>
+		
            <td>  
             <div class="am-dropdown" data-am-dropdown>
                 <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
@@ -122,7 +121,6 @@
          </table>
          <hr>
          <br><br><br>
-        
 </div>
 </div>
 

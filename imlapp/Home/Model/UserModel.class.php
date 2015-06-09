@@ -35,6 +35,16 @@ class UserModel extends Model {
 		return $data;
 
 	}
+
+
+	//查看用户记录
+	public function userinfo($username){
+			$user = M('user');
+			$c['name'] =$username; 
+			$data = $user->where($c)->select();
+			return $data;
+
+	}
 }
 
  ?>

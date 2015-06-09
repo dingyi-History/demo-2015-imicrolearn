@@ -25,7 +25,7 @@
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a href="../index/index" class="navbar-brand">【i微学】</a>
+					<a href="#"  data-toggle="modal" data-target="#index" class="navbar-brand">【i微学】</a>
 				</div>
 				
 				<div class="collapse navbar-collapse">
@@ -34,9 +34,9 @@
              
              <li><a href="#" data-toggle="modal" data-target="#fx">方向</a></li>
 					
-				         
-            <li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
-           
+				    <?php if(empty($showusername)): ?><li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
+            <?php else: ?> 
+              <li><a href="#" data-toggle="modal" data-target="#user" ><?php echo ($showusername); ?></a></li><?php endif; ?>
 					</ul>
 
 					
@@ -95,18 +95,85 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="fx1">请选择方向</h4>
+        <h4 class="modal-title text-center" id="fx1">有方向很重要</h4>
       </div>
       <div class="modal-body">
-       
+      
 
-            <?php if(is_array($alltype)): $i = 0; $__LIST__ = $alltype;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li><a href="../course/typecourse?id=<?php echo ($vo["id"]); ?>"  class="text-center"><?php echo ($vo["typename"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+            <div class="list-group">
+            <?php if(is_array($alltype)): $i = 0; $__LIST__ = $alltype;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5><?php echo ($vo["typename"]); ?></h5></a><?php endforeach; endif; else: echo "" ;endif; ?>
+            </div>
       
       </div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary">看全部经验</button>
-        <button type="button" class="btn btn-primary">看全部教程</button>
+        <a href="/imicrolearn/way/showway"><button type="button" class="btn btn-primary btn-lg btn-block">看全部经验</button></a>
+        <br>
+        <a href="/imicrolearn/course/showcourse"><button type="button" class="btn btn-primary btn-lg btn-block">看全部教程</button></a>
+       
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="user" tabindex="-1" role="dialog" aria-labelledby="user1" aria-hidden="true">
+
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="user1">去哪儿？</h4>
+      </div>
+      <div class="modal-body">
+      
+
+            <div class="list-group">
+         
+            <a href="/imicrolearn/user/userinfo" class="text-center list-group-item list-group-item-info"><h5>查看我的收录</h5></a>
+            <a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5>查看我的专辑</h5></a>
+            <a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5>我要分享</h5></a>
+         
+            </div>
+      
+      </div>
+      <div class="modal-footer">
+
+       <a href="/imicrolearn/user/logout"><button type="button" class="btn btn-danger btn-lg btn-block">注销</button></a> 
+       
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade " id="index" tabindex="-1" role="dialog" aria-labelledby="index" aria-hidden="true">
+
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="index">回首页？</h4>
+      </div>
+      <div class="modal-body">
+      
+
+            <div class="list-group">
+         <a href="/imicrolearn/" class="text-center list-group-item list-group-item-info"><h5>回首页</h5></a>
+            <a href="/imicrolearn/user/userinfo" class="text-center list-group-item list-group-item-info"><h5>查看我的收录</h5></a>
+            <a href="/imicrolearn/course/addcourse" class="text-center list-group-item list-group-item-info"><h5>我要分享</h5></a>
+         
+            </div>
+      
+      </div>
+      <div class="modal-footer">
+
+     <button type="button" class="btn btn-danger btn-lg btn-block">关闭</button>
+       
         </a>
       </div>
       
@@ -114,7 +181,7 @@
   </div>
 </div>
 		<div id ="cleannav"class="clearfix"></div>
-		
+
 		
 
 <div class="container-fluid" style="padding:0;">
@@ -151,9 +218,10 @@
 				<div class="container">
 				<div class="row"  style="color:white;">
 					<div class="col-md-4">
-					<br><br><br><br>
+					<br><br>
 					<img id="logo" src="/imicrolearn/Public/imlogo.png" alt="">
 					<div class="text-center">imicrolearn</div>
+					<button data-am-smooth-scroll type="button" class="btn btn-success">回到顶部</button>
 					</div>
 
 					<div class="col-md-4 hidden-xs">

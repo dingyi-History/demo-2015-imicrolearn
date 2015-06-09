@@ -1,0 +1,81 @@
+<extend name="./amazebase"/>
+<block name="title">
+<div id="usertitle" class="am-g">
+
+<div class="container">
+<br>
+  <div class="am-u-sm-4">
+  <img src="__PUBLIC__/imlogo.png" alt="" id="touxiang">
+
+  </div>
+  <div class="am-u-sm-6">
+  <br>
+<h3>你好！分享是美好的品质。</h3>
+  </div>
+
+<div class="am-u-sm-2">
+  <button type="button" class="btn btn-info btn-lg btn-block">我的</button>
+          <br>    
+  <a href=""><button type="button" class="btn btn-success btn-lg btn-block">分享</button></a>
+</div>
+</div>
+<br>
+</div>
+<hr>
+</block>
+
+<block name="sidebar">
+<block name="main">
+
+<form action="" method="post">
+<article class="am-comment"> <!-- 评论容器 -->
+
+  <div class="am-comment-main"> <!-- 评论内容容器 -->
+    <header class="am-comment-hd">
+      <!--<h3 class="am-comment-title">评论标题</h3>-->
+      <div class="am-comment-meta"> <!-- 评论元数据 -->
+      <p><input type="text" class="am-form-field am-round" style="width:50%;" placeholder="点击添加标题" required/></p>
+      </div>
+    </header>
+
+    <div class="am-comment-bd">
+	<div class="am-form-group" >
+      <textarea style="width:100%; border-radius:5px;"class="" rows="5" id="doc-ta-1" placeholder="点击添加分享内容" required></textarea>
+    </div>
+
+    </div> <!-- 评论内容 -->
+  </div>
+  <div class="am-g">
+  <br>
+  	<div class="am-u-sm-4 am-u-sm-offset-4">
+  		<button type="submit" class="btn btn-success btn-lg btn-block">分享</button>
+  	</div>
+
+  </div>
+  <hr>
+</article>
+</form>
+
+
+<volist name="allway" id="way">
+<article class="am-comment"> <!-- 评论容器 -->
+  <a href="">
+    <img class="am-comment-avatar" alt="" style="width:50px;height:50px;" /> <!-- 评论者头像 -->   
+  </a>
+
+  <div class="am-comment-main"> <!-- 评论内容容器 -->
+    <header class="am-comment-hd">
+      <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$way.wtitle}</h4>
+      <div class="am-comment-meta am-text-right"> <!-- 评论元数据 -->
+        分享于 <time datetime="">{$way.wdate}</time>
+      </div>
+    </header>
+
+    <div class="am-comment-bd"><pre>{$way.wcontent}</pre></div> <!-- 评论内容 -->
+  </div>
+  <hr>
+</article>
+</volist>
+
+</block>
+</block>

@@ -14,9 +14,11 @@ class CommonController extends Controller
     	}
 	}
 
-	public function  getusername(){
-		$username = I('username');
+	public function loginover(){
+		$username = $_SESSION['username'];
+    	$this->assign('showusername',$username);
 	}
+	
 	public function isuser()
 	{
 		$username = I('session.username');
@@ -35,4 +37,7 @@ class CommonController extends Controller
 		$data = $type->showalltype();
 		$this->assign('alltype',$data);
 	}
+
+
+
 }

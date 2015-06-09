@@ -7,6 +7,8 @@ class CourseController extends CommonController
 
 //展示所有教程
 	public function showcourse(){
+		$this->loginover();
+		$this->showtype();
 		$course = D('course');
 		$data = $course ->showallcourse();
 		$this->assign('showallcourse',$data);
@@ -17,12 +19,13 @@ class CourseController extends CommonController
 
 //分类显示教程
 	public function typecourse(){
+		$this->loginover();
+		$this->showtype();
 		$typeid = I('get.id');
 		$course = D('course');
 		$nowid=null;
 		$data = $course ->typecourse($typeid,$nowid);
 		$this->assign('showallcourse',$data);
-
 		$type = D('coursetype');
 		$d = $type->showtype($typeid);
 		$this->assign('type',$d);
@@ -33,6 +36,8 @@ class CourseController extends CommonController
 
 //详细展示一个教程的内容，步骤式内容
 	public function showonecourse(){
+		$this->loginover();
+		$this->showtype();
 		$courseid = I('get.id');
 		$courseview  = D('CourseView');
 		$condition['cid'] = $courseid;
@@ -44,6 +49,16 @@ class CourseController extends CommonController
 		$coursename = $course->typecourse($typeid,$courseid);
 		$this->assign('coursename',$coursename);
 		$this->display();
+	}
+
+
+	//添加教程
+	public function addcourse(){
+		$this->loginover();
+		$this->showtype();
+		$user = session('username');
+		$this->display();
+
 	}
 
 }

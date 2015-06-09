@@ -2026,3 +2026,511 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001644s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001975s ]
 
+[ 2015-06-08T22:19:14+08:00 ] ::1 /imicrolearn/admin/index/adminhome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002160s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000233s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000656s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028697s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001930s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002419s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001735s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002022s ]
+
+[ 2015-06-08T22:19:50+08:00 ] ::1 /imicrolearn/admin/admin/alluser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002615s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `iml_user`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000197s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000501s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034970s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001571s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002181s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002422s ]
+
+[ 2015-06-08T22:19:52+08:00 ] ::1 /imicrolearn/admin/admin/admin-form.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000218s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001504s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001953s ]
+ERR: 非法操作:admin-form
+
+[ 2015-06-08T22:19:56+08:00 ] ::1 /imicrolearn/admin/admin/admin-help.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001532s ]
+ERR: 非法操作:admin-help
+
+[ 2015-06-08T22:20:00+08:00 ] ::1 /imicrolearn/admin/course/allcourse
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000107s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001986s ]
+SQL: SHOW COLUMNS FROM `iml_course` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `iml_stepcontent` [ RunTime:0.0073s ]
+SQL: SELECT course.cid AS cid,course.cname AS cname,course.ctitle AS ctitle,coursetype.id AS typeid,coursetype.typename AS typename,stepcontent.scontent AS scontent,stepcontent.stepid AS stepid FROM iml_course course  JOIN iml_coursetype coursetype ON course.ctypeid=coursetype.id  JOIN iml_stepcontent stepcontent ON course.cid=stepcontent.cid  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000342s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000840s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040927s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000738s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003510s ]
+
+[ 2015-06-08T22:20:03+08:00 ] ::1 /imicrolearn/admin/admin/alladmin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001034s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001433s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001767s ]
+SQL: SHOW COLUMNS FROM `iml_admin` [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `iml_admin` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `iml_admin`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000339s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000839s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030691s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000967s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001155s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001485s ]
+
+[ 2015-06-08T22:20:05+08:00 ] ::1 /imicrolearn/admin/admin/alluser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000124s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001928s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002146s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003517s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `iml_user`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000520s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035101s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035913s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001465s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001832s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002363s ]
+
+[ 2015-06-08T22:22:15+08:00 ] ::1 /imicrolearn/admin/admin/alluser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001415s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002024s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `iml_user`  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000523s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049342s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049777s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001239s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001514s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002124s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002498s ]
+
+[ 2015-06-08T22:37:22+08:00 ] ::1 /imicrolearn/admin/admin/alluser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001787s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002090s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `iml_user` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `iml_user`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000236s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000604s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033768s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034737s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001937s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002575s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003112s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003590s ]
+
+[ 2015-06-08T22:37:25+08:00 ] ::1 /imicrolearn/admin/course/allcourse
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001219s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005273s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005667s ]
+SQL: SHOW COLUMNS FROM `iml_course` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `iml_stepcontent` [ RunTime:0.0057s ]
+SQL: SELECT course.cid AS cid,course.cname AS cname,course.ctitle AS ctitle,coursetype.id AS typeid,coursetype.typename AS typename,stepcontent.scontent AS scontent,stepcontent.stepid AS stepid FROM iml_course course  JOIN iml_coursetype coursetype ON course.ctypeid=coursetype.id  JOIN iml_stepcontent stepcontent ON course.cid=stepcontent.cid  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000194s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000484s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037579s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037932s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001164s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002157s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002588s ]
+
+[ 2015-06-08T22:37:50+08:00 ] ::1 /imicrolearn/admin/course/allcourse
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003845s ]
+SQL: SHOW COLUMNS FROM `iml_course` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `iml_stepcontent` [ RunTime:0.0056s ]
+SQL: SELECT course.cid AS cid,course.cname AS cname,course.ctitle AS ctitle,coursetype.id AS typeid,coursetype.typename AS typename,stepcontent.scontent AS scontent,stepcontent.stepid AS stepid FROM iml_course course  JOIN iml_coursetype coursetype ON course.ctypeid=coursetype.id  JOIN iml_stepcontent stepcontent ON course.cid=stepcontent.cid  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000382s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044958s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045379s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001303s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001764s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001711s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002220s ]
+
+[ 2015-06-08T22:37:53+08:00 ] ::1 /imicrolearn/admin/type/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001025s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003063s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0063s ]
+ERR: Think\Model:alltype方法不存在！
+
+[ 2015-06-08T22:39:46+08:00 ] ::1 /imicrolearn/admin/type/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002065s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002392s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0075s ]
+ERR: Think\Model:alltype方法不存在！
+
+[ 2015-06-08T22:41:41+08:00 ] ::1 /imicrolearn/admin/type/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000086s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002670s ]
+ERR: 无法加载控制器:Type
+
+[ 2015-06-08T22:41:43+08:00 ] ::1 /imicrolearn/admin/type/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001379s ]
+ERR: 无法加载控制器:Type
+
+[ 2015-06-08T22:42:23+08:00 ] ::1 /imicrolearn/admin/type/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003325s ]
+ERR: 无法加载控制器:Type
+
+[ 2015-06-08T22:42:30+08:00 ] ::1 /imicrolearn/admin/course/allcourse
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001619s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002217s ]
+SQL: SHOW COLUMNS FROM `iml_course` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `iml_stepcontent` [ RunTime:0.0086s ]
+SQL: SELECT course.cid AS cid,course.cname AS cname,course.ctitle AS ctitle,coursetype.id AS typeid,coursetype.typename AS typename,stepcontent.scontent AS scontent,stepcontent.stepid AS stepid FROM iml_course course  JOIN iml_coursetype coursetype ON course.ctypeid=coursetype.id  JOIN iml_stepcontent stepcontent ON course.cid=stepcontent.cid  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000232s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000532s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045797s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046221s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002891s ]
+
+[ 2015-06-08T22:42:34+08:00 ] ::1 /imicrolearn/admin/coursetype/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000163s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002153s ]
+ERR: 无法加载控制器:Coursetype
+
+[ 2015-06-08T22:42:59+08:00 ] ::1 /imicrolearn/admin/courseType/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001133s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003262s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0071s ]
+ERR: Think\Model:alltype方法不存在！
+
+[ 2015-06-08T22:44:13+08:00 ] ::1 /imicrolearn/admin/coursetype/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002127s ]
+ERR: 无法加载控制器:Coursetype
+
+[ 2015-06-08T22:44:18+08:00 ] ::1 /imicrolearn/admin/courseType/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000099s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001648s ]
+ERR: 无法加载控制器:CourseType
+
+[ 2015-06-08T22:44:19+08:00 ] ::1 /imicrolearn/admin/coursetype/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000101s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001684s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002159s ]
+ERR: 无法加载控制器:Coursetype
+
+[ 2015-06-08T22:44:21+08:00 ] ::1 /imicrolearn/admin/course/allcourse
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000059s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000994s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001070s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001354s ]
+SQL: SHOW COLUMNS FROM `iml_course` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `iml_stepcontent` [ RunTime:0.0079s ]
+SQL: SELECT course.cid AS cid,course.cname AS cname,course.ctitle AS ctitle,coursetype.id AS typeid,coursetype.typename AS typename,stepcontent.scontent AS scontent,stepcontent.stepid AS stepid FROM iml_course course  JOIN iml_coursetype coursetype ON course.ctypeid=coursetype.id  JOIN iml_stepcontent stepcontent ON course.cid=stepcontent.cid  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000200s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000484s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038601s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003677s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003142s ]
+
+[ 2015-06-08T22:44:24+08:00 ] ::1 /imicrolearn/admin/coursetype/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000099s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001798s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003055s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0066s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `iml_coursetype`  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000514s ]
+NOTIC: [8] Undefined index: aname C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 109 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 110 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 111 行.
+NOTIC: [8] Undefined index: aname C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 109 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 110 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 111 行.
+NOTIC: [8] Undefined index: aname C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 109 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 110 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 111 行.
+NOTIC: [8] Undefined index: aname C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 109 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 110 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 111 行.
+NOTIC: [8] Undefined index: aname C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 109 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 110 行.
+NOTIC: [8] Undefined index: apwd C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\61199f8fc5610319d5f0984c73c41784.php 第 111 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045133s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046074s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003033s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005998s ]
+
+[ 2015-06-08T22:45:34+08:00 ] ::1 /imicrolearn/admin/coursetype/alltype
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001002s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002138s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002649s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `iml_coursetype` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `iml_coursetype`  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000499s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001649s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035745s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036048s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002070s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002679s ]
+
+[ 2015-06-08T22:46:21+08:00 ] ::1 /imicrolearn/admin/coursetype/admin-table.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000065s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002132s ]
+ERR: 非法操作:admin-table
+
+[ 2015-06-08T22:46:30+08:00 ] ::1 /imicrolearn/admin/coursetype/admin-help.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003499s ]
+ERR: 非法操作:admin-help
+
+[ 2015-06-08T23:00:02+08:00 ] ::1 /imicrolearn/admin/way/allway
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000063s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002156s ]
+SQL: SHOW COLUMNS FROM `iml_way` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `iml_way` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `iml_way`  [ RunTime:0.0011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000445s ]
+
+[ 2015-06-08T23:00:44+08:00 ] ::1 /imicrolearn/admin/way/allway
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000058s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001164s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001566s ]
+SQL: SHOW COLUMNS FROM `iml_way` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `iml_way` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `iml_way`  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000198s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000505s ]
+NOTIC: [8] Undefined variable: alladmin C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\d9b2701b714b2dadeb7e065b3b967577.php 第 107 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040327s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040730s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001713s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004443s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005131s ]
+
+[ 2015-06-08T23:19:57+08:00 ] ::1 /imicrolearn/admin/way/allway
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000116s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.022184s ]
+SQL: SHOW COLUMNS FROM `iml_way` [ RunTime:0.0077s ]
+SQL: SHOW COLUMNS FROM `iml_way` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `iml_way`  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000347s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000897s ]
+NOTIC: [8] Undefined variable: alladmin C:\M\ime\wamp\www\imicrolearn\imlapp\Runtime\Cache\Admin\d9b2701b714b2dadeb7e065b3b967577.php 第 107 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054386s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.021220s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.021822s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.035038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.035725s ]
+

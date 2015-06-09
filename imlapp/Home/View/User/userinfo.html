@@ -1,0 +1,73 @@
+<extend name="./amazebase"/>
+
+<block name="title">
+<div id="usertitle" class="am-g">
+<div class="container">
+<br>
+  <div class="am-u-sm-2 am-u-sm-offset-1 am-hide-sm-down">
+  <img src="__PUBLIC__/imlogo.png" alt="" id="touxiang">
+
+  </div>
+  <div class="am-u-sm-5">
+    
+<volist name="userinfo" id="v">
+<h3>你好！{$v.nickname|default="昵称"}</h3>
+<p>用户名：{$v.name}</p>
+邮箱：{$v.email|default="没填邮箱"}<br>
+</volist>
+  </div>
+
+<div class="am-u-sm-3">
+  
+  <button type="button" class="btn btn-info btn-lg btn-block">我的</button>
+          <br>    
+  <a href=""><button type="button" class="btn btn-success btn-lg btn-block">分享</button></a>
+</div>
+
+</div>
+<br>
+</div>
+<hr>
+</block>
+
+<block name="main">
+<div class="container">
+<article class="am-comment"> <!-- 评论容器 -->
+  <a href="">
+    <img class="am-comment-avatar" alt=""/> <!-- 评论者头像 -->
+  </a>
+
+  <div class="am-comment-main"> <!-- 评论内容容器 -->
+    <header class="am-comment-hd">
+      <!--<h3 class="am-comment-title">评论标题</h3>-->
+      <div class="am-comment-meta"> <!-- 评论元数据 -->
+        <a href="#link-to-user" class="am-comment-author">..</a> <!-- 评论者 -->
+        评论于 <time datetime="">...</time>
+      </div>
+    </header>
+
+    <div class="am-comment-bd">...</div> <!-- 评论内容 -->
+  </div>
+</article>
+
+<article class="am-comment">
+  <a href="#link-to-user-home">
+    <img src="" alt="" class="am-comment-avatar" width="48" height="48"/>
+  </a>
+
+  <div class="am-comment-main">
+    <header class="am-comment-hd">
+      <!--<h3 class="am-comment-title">评论标题</h3>-->
+      <div class="am-comment-meta">
+        <a href="#link-to-user" class="am-comment-author">某人</a>
+        评论于 <time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-12 15:30</time>
+      </div>
+    </header>
+
+    <div class="am-comment-bd">
+      ...
+    </div>
+  </div>
+</article>
+</div>
+</block>

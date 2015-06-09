@@ -25,7 +25,7 @@
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a href="../index/index" class="navbar-brand">【i微学】</a>
+					<a href="#"  data-toggle="modal" data-target="#index" class="navbar-brand">【i微学】</a>
 				</div>
 				
 				<div class="collapse navbar-collapse">
@@ -42,7 +42,7 @@
 					
 				    <?php if(empty($showusername)): ?><li><a href="#" data-toggle="modal" data-target="#login">登录</a></li>
             <?php else: ?> 
-              <li><a href="/imicrolearn/user/info" data-toggle="modal" data-target="#user" ><?php echo ($showusername); ?></a></li><?php endif; ?>
+              <li><a href="#" data-toggle="modal" data-target="#user" ><?php echo ($showusername); ?></a></li><?php endif; ?>
 					</ul>
 
 					
@@ -101,7 +101,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title text-center" id="fx1">请选择方向</h4>
+        <h4 class="modal-title text-center" id="fx1">有方向很重要</h4>
       </div>
       <div class="modal-body">
       
@@ -113,8 +113,9 @@
       </div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary btn-lg btn-block">看全部经验</button>
-        <button type="button" class="btn btn-primary btn-lg btn-block">看全部教程</button>
+        <a href="/imicrolearn/way/showway"><button type="button" class="btn btn-primary btn-lg btn-block">看全部经验</button></a>
+        <br>
+        <a href="/imicrolearn/course/showcourse"><button type="button" class="btn btn-primary btn-lg btn-block">看全部教程</button></a>
        
         </a>
       </div>
@@ -130,16 +131,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title text-center" id="user1">我要去？</h4>
+        <h4 class="modal-title text-center" id="user1">去哪儿？</h4>
       </div>
       <div class="modal-body">
       
 
             <div class="list-group">
          
-            <a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5>查看我的收录</h5></a>
-            <a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5>查看我的专辑</h5></a>
-            <a href="/imicrolearn/course/typecourse?id=<?php echo ($vo["id"]); ?>" class="text-center list-group-item list-group-item-info"><h5>我要分享</h5></a>
+            <a href="/imicrolearn/user/userinfo" class="text-center list-group-item list-group-item-info"><h5>查看我的收录</h5></a>
+           
+            <a href="/imicrolearn/course/addcourse" class="text-center list-group-item list-group-item-info"><h5>我要分享</h5></a>
          
             </div>
       
@@ -154,8 +155,39 @@
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade " id="index" tabindex="-1" role="dialog" aria-labelledby="index" aria-hidden="true">
+
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title text-center" id="index">回首页？</h4>
+      </div>
+      <div class="modal-body">
+      
+
+            <div class="list-group">
+         <a href="/imicrolearn/" class="text-center list-group-item list-group-item-info"><h5>回首页</h5></a>
+            <a href="/imicrolearn/user/userinfo" class="text-center list-group-item list-group-item-info"><h5>查看我的收录</h5></a>
+            <a href="/imicrolearn/course/addcourse" class="text-center list-group-item list-group-item-info"><h5>我要分享</h5></a>
+         
+            </div>
+      
+      </div>
+      <div class="modal-footer">
+
+     <button type="button" class="btn btn-danger btn-lg btn-block">关闭</button>
+       
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>
 		<div id ="cleannav"class="clearfix"></div>
-		
+
 		
 		<!-- start 动画效果 -->
 		<div class="preloader">
@@ -237,7 +269,7 @@
 						<h2 class="text-uppercase">我的自省与你的迷途</h2>
 						<p>的确，路不怕长，但总要有些指引，有些互动，有前行的鼓舞。</p>
 						<p><span><i class="fa fa-mobile"></i></span>【进阶】
-						<a href="">迷途了，在这里寻找清晰，重获信心。</a></p>
+						<a href="/imicrolearn/course/showcourse">迷途了，在这里寻找清晰，重获信心。</a></p>
 						<p><i class="fa fa-code"></i>【交流】
 						<a href="">自省了，在这里互动经验，分享喜悦。</a></p>
 					</div>
@@ -344,7 +376,7 @@
 						</div>
 						<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
 							<div class="contact-form">
-								<form action="../" method="post">
+								<form action="/imicrolearn/user/isregister" method="post">
 									<div class="col-md-12">
 										<input type="text" class="form-control" placeholder="用户名" required>
 									</div>
@@ -382,9 +414,10 @@
 				<div class="container">
 				<div class="row"  style="color:white;">
 					<div class="col-md-4">
-					<br><br><br><br>
+					<br><br>
 					<img id="logo" src="/imicrolearn/Public/imlogo.png" alt="">
 					<div class="text-center">imicrolearn</div>
+					<button  data-am-smooth-scroll type="button" class="btn btn-success">回到顶部</button>
 					</div>
 
 					<div class="col-md-4 hidden-xs">

@@ -61,6 +61,7 @@
 
 #coursetitle{
 	background: #ECECEC;
+	box-shadow: 0px 3px 3px #888888;
 }
 
 #coursetitle h2 ,#coursetitle small,#coursetitle  p{
@@ -139,4 +140,17 @@ footer{
 #tijiao{
 	position: relative;
 	left: 45px;
+}
+
+#touxiang{
+	max-width: 100px;
+	max-height: 100px;
+}
+
+#usertitle{
+	background: #ECECEC;
+}
+
+.container-fluid{
+	padding:0;
 }

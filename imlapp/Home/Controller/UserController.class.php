@@ -7,16 +7,33 @@ class UserController extends CommonController {
 
 	//用户注册页面
     public function register(){
+        $this->showtype();
     	$this->display();
     }
 
     //用户登录页面
     public function login(){
-    	
+    	$this->showtype();
     	$this->display();
     }
 
+//用户记录
+    public function userinfo(){
+        $this->loginover();
+        $this->showtype();
+        $username = session('username');
+        $user = D('user');
+        $data = $user->userinfo($username);
+        $userid = $data[0]['id'];
+        $userlike = D('UserlikecourseView');
+        $c['userid']=$userid;
+        $datalike = $userlike->where($c)->select();
+        
+        $this->assign('userinfo',$data);
+        $this->display();
+    }
 
+//业务处理
    	//用户注册业务处理
     public function isregister(){
     	$user = D('user');
@@ -52,7 +69,7 @@ class UserController extends CommonController {
     		$rs = $user->isuser($name,$pwd);
     	}
         if($rs)
-            {   $_SESSION['username'] = $name;}
+            {  session('username',$name);}
     	$msg0 = '对不起，登录失败';
         $msg1 = '恭喜你，登录成功。';
         $url = '../index/index';
@@ -66,4 +83,7 @@ class UserController extends CommonController {
         session('username',null); // 删除name
         $this->success('注销成功', '/imicrolearn');
     }
+
+
+
 }

@@ -12,5 +12,6 @@ class CourseController extends CommonController
 		$this->assign('allcourse',$data);
 		$this->display();
 	}
+
 }
 
